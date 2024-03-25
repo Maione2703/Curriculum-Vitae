@@ -1,0 +1,185 @@
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{psfrag,dsfont,amsfonts,yfonts}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tabularx}
+\usepackage{mathrsfs}
+\usepackage{lipsum}
+\usepackage{cancel} 
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{url}
+\usepackage{float}
+\usepackage{soul}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.4\textwidth}
+\usepackage{physics}
+\usepackage{multirow}
+\usepackage[inner=3cm,outer=2.5cm,top=3cm,bottom=4cm]{geometry}
+%\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\fancyhead[LO]{}
+\fancyhead[CO]{\scriptsize\textsc{\rightmark}}
+\fancyhead[RO]{\thepage}
+%\fancyhead[LE]{\thepage}
+%\fancyhead[CE]{\scriptsize\textsc{\leftmark}}
+%\fancyhead[RE]{}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\fancypagestyle{chapterfancy}{
+    \fancyhead[LO]{}
+    \fancyhead[CO]{}
+    \fancyhead[RO]{\thepage}
+    %\fancyhead[LE]{\thepage}
+    %\fancyhead[CE]{}
+    %\fancyhead[RE]{}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\usepackage{cancel}
+\usepackage{afterpage}
+
+\usepackage{imakeidx}
+\makeindex[intoc]
+
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\prof}[1]{\textcolor{green}{(Proposta Prof: #1)}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\white}[1]{\textcolor{white}{#1}}
+
+
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{\clearpage{\pagestyle{empty}\origdoublepage}}
+\let\cleardoublepage\clearemptydoublepage
+
+
+\usepackage[labelfont=bf]{caption}
+\usepackage[labelfont=bf]{subcaption}
+\captionsetup{width=0.9\textwidth}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{thmn}{Theorem}
+\newtheorem*{defnn}{Definition}
+\theoremstyle{definition}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem*{notn}{Notation}
+\newtheorem*{note}{Note}
+
+\date{}
+
+\DeclareMathOperator*{\essup}{ess sup}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\spa}{sp}
+\DeclareMathOperator{\tot}{tot}
+\DeclareMathOperator{\fin}{fin}
+\DeclareMathOperator{\Mat}{Mat}
+
+%\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\epsilon}{\varepsilon}
+%\renewcommand{\phi}{\varphi}
+%\renewcommand{\theta}{\vartheta}
+%\renewcommand{\emptyset}{\varnothing}
+
+\newenvironment{changemargin}[2]{
+\begin{list}{}{
+\setlength{\topsep}{0pt}
+\setlength{\leftmargin}{#1}
+\setlength{\rightmargin}{#2}
+\setlength{\listparindent}{\parindent}
+\setlength{\itemindent}{\parindent}
+\setlength{\parsep}{\parskip}
+}
+\item[]}{\end{list}}
+
+\usepackage{pythonhighlight}
+
+\lstdefinestyle{androguard}{
+    language=[LaTeX]TeX,
+    breaklines=true,
+    basicstyle=\tt\normalsize,
+    keywordstyle=\color{blue},
+    identifierstyle=\color{ao(english)},
+    frame = single,
+    xleftmargin=.03\textwidth,
+    xrightmargin=.03\textwidth
+}
+
+\lstdefinestyle{Radare2}{
+    keywordstyle = {\color{goldenpoppy}\bfseries},
+    keywordstyle = [2]{\color{darkmagenta}\bfseries},
+    otherkeywords = {[0x00008194]>,INFO:,[format],[addr],[?],title,body,title1,title2,ag<graphtype><format>,[path]},
+    morekeywords = [2]{WARN,:}
+}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\definecolor{regalia}{rgb}{0.32, 0.18, 0.5}
+\definecolor{lightslategray}{rgb}{0.47, 0.53, 0.6}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+\definecolor{satinsheengold}{rgb}{0.8, 0.63, 0.21}
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
+\definecolor{uclagold}{rgb}{1.0, 0.7, 0.0}
+\definecolor{goldenpoppy}{rgb}{0.99, 0.76, 0.0}
+\definecolor{darkmagenta}{rgb}{0.55, 0.0, 0.55}
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+
+\flushbottom
